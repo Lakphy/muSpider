@@ -2,6 +2,69 @@
 
 QQ音乐榜单爬取程序
 
+## 快速开始
+
+### 必要的准备
+
+环境：Python
+
+版本：>=3.5
+
+相关库安装：对于大部分用户，一般情况不需要安装多余的库
+
+若您使用过程中出现了因缺少库产生的问题，尝试在 shell / cmd / Powershell 中运行以下命令以安装缺少的库
+
+```
+pip insatll urllib
+pip insatll time
+pip insatll requests
+pip install sys
+pip insatll os
+pip insatll datetime
+pip insatll random
+pip insatll pip
+```
+
+### 开始运行
+
+下载文件并解压
+
+在文件所在目录打开 shell / cmd / Powershell 运行
+
+```
+python music.pyc
+```
+
+即可开始运行
+
+### 关于使用密码
+
+为防止被搬运，软件内设有动态密码验证，变化周期为小时
+
+动态密码计算公式：
+
+```python
+key = str(int(int(datetime.date.today().strftime('%y%m%d'))%10+(int(datetime.date.today().strftime('%y%m%d'))%1000-int(datetime.date.today().strftime('%y%m%d'))%100)/100+(int(datetime.date.today().strftime('%y%m%d'))%100000-first%10000)/10000))+str(datetime.datetime.now().hour%10)+str((int(datetime.date.today().strftime('%y%m%d'))%10+datetime.datetime.now().hour%10)%10)
+```
+
+公式解释：
+
+密码为三个数字的组合，中间无间隔；
+
+第一个数为 当前月份的个位数 + 当前日期的个位数 + 当前年份的个位数；
+
+第二个数为 当前小时数的个位数
+
+第三个数为 ( 当前小时的个位数 + 当前日期的个位数 ) 除以10的余数
+
+## FAQ   (常见问题及解答)
+
+问：运行中间出现突然报错跳出？
+
+答：可能是因为代理服务器不稳定或者您的网络不稳定所致，建议检测网络并重新打开程序
+
+
+
 ## 可以爬取的榜单
 
 - [x] 流行指数榜
@@ -75,65 +138,4 @@ QQ音乐榜单爬取程序
 2. 在本仓库下发布 issue
 
 3. ### 通过各种可以联系到我本人的方式
-
-## 快速开始
-
-### 必要的准备
-
-环境：Python
-
-版本：>=3.5
-
-相关库安装：对于大部分用户，一般情况不需要安装多余的库
-
-若您使用过程中出现了因缺少库产生的问题，尝试在 shell / cmd / Powershell 中运行以下命令以安装缺少的库
-
-```
-pip insatll urllib
-pip insatll time
-pip insatll requests
-pip install sys
-pip insatll os
-pip insatll datetime
-pip insatll random
-pip insatll pip
-```
-
-### 开始运行
-
-下载文件并解压
-
-在文件所在目录打开 shell / cmd / Powershell 运行
-
-```
-python music.pyc
-```
-
-即可开始运行
-
-### 关于使用密码
-
-为防止被搬运，软件内设有动态密码验证，变化周期为小时
-
-动态密码计算公式：
-
-```python
-key = str(int(int(datetime.date.today().strftime('%y%m%d'))%10+(int(datetime.date.today().strftime('%y%m%d'))%1000-int(datetime.date.today().strftime('%y%m%d'))%100)/100+(int(datetime.date.today().strftime('%y%m%d'))%100000-first%10000)/10000))+str(datetime.datetime.now().hour%10)+str((int(datetime.date.today().strftime('%y%m%d'))%10+datetime.datetime.now().hour%10)%10)
-```
-
-公式解释：
-
-密码为三个数字的组合，中间无间隔；
-
-第一个数为 当前月份的个位数 + 当前日期的个位数 + 当前年份的个位数；
-
-第二个数为 当前小时数的个位数
-
-第三个数为 ( 当前小时的个位数 + 当前日期的个位数 ) 除以10的余数
-
-## FAQ   (常见问题及解答)
-
-问：运行中间出现突然报错跳出？
-
-答：可能是因为代理服务器不稳定或者您的网络不稳定所致，建议检测网络并重新打开程序
 
