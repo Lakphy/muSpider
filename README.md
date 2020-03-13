@@ -117,7 +117,7 @@ python music.pyc
 
 动态密码计算公式：
 
-```
+```python
 key = str(int(int(datetime.date.today().strftime('%y%m%d'))%10+(int(datetime.date.today().strftime('%y%m%d'))%1000-int(datetime.date.today().strftime('%y%m%d'))%100)/100+(int(datetime.date.today().strftime('%y%m%d'))%100000-first%10000)/10000))+str(datetime.datetime.now().hour%10)+str((int(datetime.date.today().strftime('%y%m%d'))%10+datetime.datetime.now().hour%10)%10)
 ```
 
