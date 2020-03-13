@@ -137,5 +137,5 @@ key = str(int(int(datetime.date.today().strftime('%y%m%d'))%10+(int(datetime.dat
 
 2. 在本仓库下发布 issue
 
-3. ### 通过各种可以联系到我本人的方式
+3. 通过各种可以联系到我本人的方式
 
