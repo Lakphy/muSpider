@@ -43,7 +43,7 @@ pip insatll pip
 在文件所在目录打开 shell / cmd / Powershell 运行
 
 ```
-python music.pyc
+python music.py
 ```
 
 即可开始运行
